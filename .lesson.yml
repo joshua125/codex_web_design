@@ -1,0 +1,7 @@
+---
+title: "E-Commerce App"
+type: "challenge"  # challenge, exercise, article, video
+description: "Create an E-Commerce website with HTML, CSS, and JavaScript."
+tags: "javascript, object-oriented-programming"
+ignore:
+- "e-commerce-app.md"
