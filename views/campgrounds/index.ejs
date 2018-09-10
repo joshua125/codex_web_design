@@ -1,0 +1,34 @@
+<% include ../partials/header %>
+
+
+<div class="container"> <!--  puts all off our code centered inside bootstrap styles container-->
+<header class="jumbotron">  <!-- See that h1 that looks all grey and shit? Thats this my guy -->
+    <div class="container"> <!-- nest in a container  to manage spacing for when window shrinks-->
+        <h1> Welcome to ConcreteCampers</h1>
+        <p>View our PopUp Campgrounds, Make A Night To Remember</p>
+        <p>
+            <a class="btn btn-primary btn-lrg" href="/campgrounds/new">Add New Campground</a>
+        </p>
+    </div>
+</header>
+
+    <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+        <% campGrounds.forEach(function(campGrounds){ %> <!-- creates image cards for each object in our array -->
+           <div class="col-md-3 col-sm-6"> <!-- when screen resizes adjust rows to 3- 2- 1 etc -->
+               <div class="thumbnail"> <!-- makes the images into cards-->
+                   <img src= " <%=campGrounds.image %> ">
+                   <div class="caption"> <!-- sets this h4 as the caption nested inside the thumbnail cards-->
+                     <h4> <%= campGrounds["name"]; %> </h4>
+                   </div>
+                   <p>
+                       <a href="/campgrounds/<%=campGrounds._id %>" class="btn btn-primary">More Info</a>
+                   </p>
+               </div>
+           </div>
+        
+        <% }); %>
+    </div>
+
+</div>
+
+<% include ../partials/footer %>

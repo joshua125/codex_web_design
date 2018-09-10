@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+    </head>
+    
+    <body>
+        
+     <nav class="navbar navbar-default"> <!-- create our navbar -->
+        <div class="container-fluid">   <!-- helps with spacing elements in our navbar -->
+            <div class="navbar-header"> <!-- navbar header has a single element which is usually our sigh logo -->
+                <a class="navbar-brand" href="/">ConcreteCampers</a> <!-- sigh logo is a link to homepage -->
+            </div>
+            <div class="collapse navbar-collapse"> <!-- collapse it when screen size becomes mobile..we'll add hamburger later-->
+                <ul class=" nav navbar-nav navbar-right">
+                   <% if(!currentUser) { %>
+                    <li><a href="/login">login</a></li>
+                    <li><a href="/register">Sign Up</a></li>
+                  <%  } else { %>
+                    <li><a href="#">Sign In As <%= currentUser.username %></a></li>
+                    <li><a href="/logout">Log Out</a></li>
+                  <%  } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <div class="container">
+        <% if (error && error.length > 0) { %>
+        <div class="alert alert-danger" role="alert">
+             <%=error %>
+        </div> <!-- flash error messages -->
+        <% } %>
+        <% if (success && success.length > 0) { %>
+         <div class="alert alert-success" role="alert">
+             <%=success %>
+        </div> 
+        <% } %>
+    </div>
+    
+    
+   
+
+            
