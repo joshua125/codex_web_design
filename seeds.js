@@ -30,28 +30,28 @@ CampGround.remove({}, function(err){
         console.log("DB Purged")
     }
    // add a few campgrounds
-data.forEach(function(seed){
-    CampGround.create(seed,function(err, campground){
-        if(err){
-            console.log(err)
-        }else{
-            console.log("added campground" + campground);
-            Comment.create(
-                {
-                    text: "wish there were internet",
-                    author: "Homer"
-                 }, function(err, comment){
-                     if(err){
-                         console.log(err);
-                     }else{
-                         campground.comments.push(comment)
-                         campground.save();
-                         console.log("created new comment")
-                     }
-                 })
-        }
-      })
-    })
+// data.forEach(function(seed){
+//     CampGround.create(seed,function(err, campground){
+//         if(err){
+//             console.log(err)
+//         }else{
+//             console.log("added campground" + campground);
+//             Comment.create(
+//                 {
+//                     text: "wish there were internet",
+//                     author: "Homer"
+//                  }, function(err, comment){
+//                      if(err){
+//                          console.log(err);
+//                      }else{
+//                          campground.comments.push(comment)
+//                          campground.save();
+//                          console.log("created new comment")
+//                      }
+//                  })
+//         }
+//       })
+//     })
   })
  }
 
