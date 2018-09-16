@@ -17,7 +17,7 @@ router.get("/campgrounds/:id/comments/new", middleware.isLoggedIn, function(req,
            res.render("comments/new", {campground: campground})
        }
    })
-});`    Z`
+}); 
 
 router.post("/campgrounds/:id/comments", middleware.isLoggedIn, function(req, res){
     //look up campground using id
